@@ -27,7 +27,7 @@ jobs:
             - name: Upload artifact
               uses: actions/upload-artifact@v4
               with:
-                name: models
-                path: models/upload_train.pkl    
+                name: Trained_Model
+                path: models/model_train.pkl    
         
             
