@@ -7,7 +7,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 import os
 
-def load_config(config_path='../config/config.json'):
+def load_config(config_path='config/config.json'):
     with open(config_path,'r') as f:
         config=json.load(f)
     return config
