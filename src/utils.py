@@ -1,5 +1,6 @@
 import sys
 import os
+import json
 from sklearn.datasets import load_digits
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
