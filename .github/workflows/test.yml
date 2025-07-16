@@ -1,0 +1,23 @@
+name: Testing Using Pytest
+
+on:
+    push:
+        branches: [test_branch]
+
+jobs:
+    testing:
+        runs-on: ubuntu-latest
+
+        steps:
+           - name: Checkout code
+             uses: actions/checkout@v3
+            
+           - name: Set up Python
+             uses: actions/setup-python@v4
+            
+           - name: Installing dependencies
+             run: pip install -r requirements.txt
+
+           - name: Running the test suite
+             run: python -m pytest tests/test_train.py
+
