@@ -60,6 +60,8 @@ jobs:
             
             - name : Setup python
               uses : actions/setup-python@v4
+              with : 
+                python-version: '3.9'
             
             - name : Installing requirements
               run : pip install -r requirements.txt
