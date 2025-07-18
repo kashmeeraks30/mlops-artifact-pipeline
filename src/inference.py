@@ -3,7 +3,7 @@ import sys
 import json
 import numpy as np
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score,classification_report
+from sklearn.metrics import accuracy_score,classification_report,log_loss
 from sklearn.datasets import load_digits
 from utils import load_config,load_model
 
@@ -14,10 +14,17 @@ def main():
     model=load_model('models/model_train.pkl')
     y_predicted=model.predict(X)
 
+    y_predicted_prob=model.predict_proba(X)
+
     #Calculating the accuracy  
     accuracy=accuracy_score(y,y_predicted)
+
+    #Calculating the loss 
+    loss=log_loss(y,y_predicted_prob) 
+
     print("Inference Results:")
     print(f"Accuracy:{accuracy:.3f}")
+    print(f"Loss:{loss:.3f}")
     print(f"Total number of predictions:{len(y_predicted)}")
 
     print("\nClassification Report:")
